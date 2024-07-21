@@ -12,10 +12,6 @@ case "${GITHUB_EVENT_NAME}" in
         git push -f --all target
         git push -f --tags target
         ;;
-    delete)
-        echo "Deleting the reference ${GITHUB_EVENT_REF} in the target repository..."
-        git push -d target ${GITHUB_EVENT_REF}
-        ;;
     *)
         echo "Event type ${GITHUB_EVENT_NAME} not supported. Exiting."
         exit 0
