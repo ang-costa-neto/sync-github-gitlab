@@ -20,7 +20,7 @@ runs:
   using: 'composite'
   steps:
     - name: Sync Repository
-      run: ${{ github.action_path }}/entrypoint.sh
+      run: chmod +x ${{ github.action_path }}/entrypoint.sh
       shell: bash
       env:
         TARGET_URL: ${{ inputs.target-url }}
