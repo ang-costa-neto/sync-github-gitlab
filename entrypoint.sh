@@ -3,8 +3,7 @@
 set -e
 
 # Adiciona o repositório remoto com autenticação
-echo https://${INPUT_TARGET_USERNAME}:${INPUT_TARGET_TOKEN}@${INPUT_TARGET_URL#https://}
-git remote add target https://${INPUT_TARGET_USERNAME}:${INPUT_TARGET_TOKEN}@${INPUT_TARGET_URL#https://}
+git remote add target https://${TARGET_USERNAME}:${TARGET_TOKEN}@${TARGET_URL#https://}
 
 # Sincroniza o repositório com base no tipo de evento do GitHub
 case "${GITHUB_EVENT_NAME}" in
