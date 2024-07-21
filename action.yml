@@ -1,0 +1,29 @@
+name: 'Git Repo Sync'
+description: 'Synchronize your repository with other code management platforms like GitLab.'
+
+branding:
+  icon: 'upload-cloud'
+  color: 'gray-dark'
+
+inputs:
+  target-url:
+    description: 'URL of the target repository'
+    required: true
+  target-username:
+    description: 'Username for the target repository'
+    required: true
+  target-token:
+    description: 'Access token for the target repository'
+    required: true
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Sync Repository
+      run: ${{ github.action_path }}/entrypoint.sh
+      shell: bash
+      env:
+        TARGET_URL: ${{ inputs.target-url }}
+        TARGET_USERNAME: ${{ inputs.target-username }}
+        TARGET_TOKEN: ${{ inputs.target-token }}
+        GITHUB_EVENT_REF: ${{ github.event.ref }}
