@@ -13,7 +13,7 @@ This project was created to mirror GitHub repositories with other service reposi
         - This secret is the URL for cloning using HTTPS from the other repository management service.
     - **TARGET_USERNAME**
         - This secret is the username from the other repository management service.
-4. In your GitHub repository, create a workflow using the template below. If you do not know how to do this, follow the instructions below:
+4. In your GitHub repository, create a workflow using the template below. If you do not know how to do this, [follow the instructions below](https://github.com/ang-costa-neto/sync-github-gitlab/tree/main?tab=readme-ov-file#how-to-create-a-workflow-in-the-current-repository):
     ```yml
     name: GitLabSync
 
